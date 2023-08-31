@@ -1,0 +1,15 @@
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+       #Calling the helper method  
+        return self.BST(nums, 0, len(nums))
+    def BST(self,nums,first,last):
+        #checks for empty array
+        if first >= last: return None
+        #BST constructs TreeNode 
+        return TreeNode(
+            val=nums [(first + last)//2],
+            #constructs subtree by recursively calling BST fn.
+            left=self.BST(nums,first,(first+last)//2),
+            right=self.BST(nums,1+((first+last)//2),last)
+        )  
+    
