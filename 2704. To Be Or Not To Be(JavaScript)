@@ -1,8 +1,0 @@
-var expect = function(val) {
-    const param = val
-    return {
-        /**The ?true: will check whether the given condition is true if false executes the code after the : */
-        toBe: (value) => (value===param)? true: (() => { throw new Error("Not Equal"); })(),
-        notToBe: (value) => (value!==param)? true: (() => { throw new Error("Equal"); })(),
-    }
-};
